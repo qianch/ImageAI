@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ImageSearch.Models;
 
-namespace ImageSearch.Pages.World
+namespace ImageSearch.Pages.Citys
 {
     public class IndexModel : PageModel
     {
@@ -22,7 +22,7 @@ namespace ImageSearch.Pages.World
 
         public async Task OnGetAsync()
         {
-            City = await _context.City.Where(x => x.ID < 10).ToListAsync();
+            City = await _context.City.Where(x => x.ID < 20).ToListAsync();
         }
     }
 }

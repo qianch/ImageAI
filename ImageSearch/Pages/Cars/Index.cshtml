@@ -1,0 +1,91 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="ImageUpload.Title" class="control-label"></label>
+                <input asp-for="ImageUpload.Title" type="text" class="form-control" />
+                <span asp-validation-for="ImageUpload.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUpload.UploadImg" class="control-label"></label>
+                <input asp-for="ImageUpload.UploadImg" type="file" class="form-control" style="height:auto" />
+                <span asp-validation-for="ImageUpload.UploadImg" class="text-danger"></span>
+            </div>
+            <input type="submit" value="Upload" class="btn btn-default" />
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].ImgSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].ImgContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].UploadDT)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Car)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgSize)
+                </td>
+                <td>
+                    <img alt="@Html.DisplayFor(modelItem => item.Title)" src="data:@Html.DisplayFor(modelItem => item.ImgType);base64,@Html.DisplayFor(modelItem => item.ImgContent)" style="max-width:400px;" />
+                </td>
+                <td>
+                    <textarea class="textarea" readonly="readonly" style="width:300px;background-color:ghostwhite">@Html.DisplayFor(modelItem => item.Data)</textarea>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UploadDT)
+                </td>
+                <td>
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+                <td>
+                    <a asp-page="./Detail" asp-route-id="@item.ID">Detail</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script type="text/javascript">
+    var textarea = document.getElementsByClassName("textarea");
+    for (var i = 0; i < textarea.length; i++) {
+        var current = textarea[i];
+        current.style.height = current.scrollHeight + "px";
+    }
+</script>

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ImageSearch.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearch.Models;
 
-namespace ImageSearch.Pages.World
+namespace ImageSearch.Pages.Schedules
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace ImageSearch.Pages.World
         }
 
         [BindProperty]
-        public City City { get; set; }
+        public Schedule Schedule { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace ImageSearch.Pages.World
                 return NotFound();
             }
 
-            City = await _context.City.SingleOrDefaultAsync(m => m.ID == id);
+            Schedule = await _context.Schedule.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (City == null)
+            if (Schedule == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace ImageSearch.Pages.World
                 return NotFound();
             }
 
-            City = await _context.City.FindAsync(id);
+            Schedule = await _context.Schedule.FindAsync(id);
 
-            if (City != null)
+            if (Schedule != null)
             {
-                _context.City.Remove(City);
+                _context.Schedule.Remove(Schedule);
                 await _context.SaveChangesAsync();
             }
 

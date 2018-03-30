@@ -17,12 +17,13 @@ namespace ImageSearch.Pages.ImageSearch
         }
         public void OnGet()
         {
-            var citys = _context.City.ToList();
+            var citys = _context.City.Count();
         }
+
 
         public void OnPost()
         {
-
+            var citys = _context.City.Count();
         }
     }
 }

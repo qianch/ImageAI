@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ImageSearch.Models;
 
-namespace ImageSearch.Pages.World
+namespace ImageSearch.Pages.Citys
 {
     public class DetailsModel : PageModel
     {
