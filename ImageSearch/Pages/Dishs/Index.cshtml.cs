@@ -9,6 +9,8 @@ using ImageSearchApp.Models;
 using ImageSearchApp.Utilities;
 using System.IO;
 using ImageSearchApp.BaiduClient;
+using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace ImageSearchApp.Pages.Dishs
 {
@@ -22,7 +24,8 @@ namespace ImageSearchApp.Pages.Dishs
         }
 
         [BindProperty]
-        public ImageUpload ImageUpload { get; set; }
+        [Required(ErrorMessage = "必须上传图片")]
+        public IFormFile ImageUpload { get; set; }
 
         public IList<Dish> Dish { get; set; }
 
@@ -39,7 +42,7 @@ namespace ImageSearchApp.Pages.Dishs
                 return Page();
             }
 
-            var ImgContent = await FileHelpers.ProcessFormFile(ImageUpload.UploadImg, ModelState);
+            var ImgContent = await FileHelpers.ProcessFormFile(ImageUpload, ModelState);
 
             if (!ModelState.IsValid)
             {
@@ -47,18 +50,16 @@ namespace ImageSearchApp.Pages.Dishs
                 return Page();
             }
 
-            var ImageClassify = new ImageClassifyClient().imageClassify;
+            var ImageClassify = new ImageClassifyClient().ImageClassify;
             var options = new Dictionary<string, object> { };
             var result = ImageClassify.DishDetect(Convert.FromBase64String(ImgContent), options);
-            var title = string.IsNullOrEmpty(ImageUpload.Title) ?
-                Path.GetFileNameWithoutExtension(ImageUpload.UploadImg.FileName) :
-                ImageUpload.Title;
+            var title = Path.GetFileNameWithoutExtension(ImageUpload.FileName);
 
             var dish = new Dish
             {
                 Title = title,
-                ImgSize = ImageUpload.UploadImg.Length,
-                ImgType = ImageUpload.UploadImg.ContentType,
+                ImgSize = ImageUpload.Length,
+                ImgType = ImageUpload.ContentType,
                 ImgContent = ImgContent,
                 Data = result.ToString(),
                 UploadDT = DateTime.UtcNow

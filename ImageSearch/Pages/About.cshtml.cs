@@ -12,7 +12,7 @@ namespace ImageSearchApp.Pages
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            Message = "图片处理";
         }
     }
 }

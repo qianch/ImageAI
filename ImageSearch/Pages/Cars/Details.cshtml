@@ -5,10 +5,10 @@
     ViewData["Title"] = "Detail";
 }
 
-<h2>Detail</h2>
+<h2>详情</h2>
 
 <div>
-    <h4>Car</h4>
+    <h4>车型</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,12 +28,6 @@
         </dt>
         <dd>
             <img alt="@Html.DisplayFor(model => model.Car.Title)" src="data:@Html.DisplayFor(model => model.Car.ImgType);base64,@Html.DisplayFor(model => model.Car.ImgContent)" style="max-width:800px;" />
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Car.ImgType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Car.ImgType)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Car.Data)

@@ -8,13 +8,13 @@ namespace ImageSearchApp.BaiduClient
 {
     public class ImageClassifyClient
     {
-        private string _appID = "11007064";
-        private string _apiKey = "CysimXMgKBFLcexUqGwGNK6t";
-        private string _secretKey = "9wsK72IM764T2CS6i4VUoPgrNZtbQWFa";
-        public ImageClassify imageClassify { get; set; }
+        private const string _appID = "11007064";
+        private const string _apiKey = "CysimXMgKBFLcexUqGwGNK6t";
+        private const string _secretKey = "9wsK72IM764T2CS6i4VUoPgrNZtbQWFa";
+        public ImageClassify ImageClassify { get; set; }
         public ImageClassifyClient()
         {
-            imageClassify = new ImageClassify(_apiKey, _secretKey);
+            ImageClassify = new ImageClassify(_apiKey, _secretKey);
         }
     }
 }

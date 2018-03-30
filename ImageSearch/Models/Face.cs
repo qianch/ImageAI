@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImageSearchApp.Models
 {
-    public class Dish
+    public class Face
     {
         public int ID { get; set; }
         [Display(Name = "标题")]

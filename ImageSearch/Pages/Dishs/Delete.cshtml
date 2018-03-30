@@ -5,9 +5,9 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>删除</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>确认删除?</h3>
 <div>
     <h4>Dish</h4>
     <hr />
@@ -28,9 +28,6 @@
             @Html.DisplayNameFor(model => model.Dish.ImgContent)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Dish.ImgContent)
-        </dd>
-        <dd>
             <img alt="@Html.DisplayFor(model => model.Dish.Title)" src="data:@Html.DisplayFor(model => model.Dish.ImgType);base64,@Html.DisplayFor(model => model.Dish.ImgContent)" style="max-width:800px;" />
         </dd>
         <dd>
@@ -40,7 +37,7 @@
             @Html.DisplayNameFor(model => model.Dish.Data)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Dish.Data)
+            <textarea class="textarea" readonly="readonly" style="width:800px;background-color:ghostwhite">@Html.DisplayFor(model => model.Dish.Data)</textarea>
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Dish.UploadDT)

@@ -5,25 +5,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>菜品识别</h2>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <div class="row">
     <div class="col-md-4">
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label asp-for="ImageUpload.Title" class="control-label"></label>
-                <input asp-for="ImageUpload.Title" type="text" class="form-control" />
-                <span asp-validation-for="ImageUpload.Title" class="text-danger"></span>
+                <label asp-for="ImageUpload" class="control-label">新增图片</label>
+                <input asp-for="ImageUpload" type="file" class="form-control" style="height:auto"/>
+                <span asp-validation-for="ImageUpload" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ImageUpload.UploadImg" class="control-label"></label>
-                <input asp-for="ImageUpload.UploadImg" type="file" class="form-control" style="height:auto" />
-                <span asp-validation-for="ImageUpload.UploadImg" class="text-danger"></span>
-            </div>
-            <input type="submit" value="Upload" class="btn btn-default" />
+            <input type="submit" value="上传" class="btn btn-default" />
         </form>
     </div>
 </div>
@@ -62,8 +54,8 @@
                     @Html.DisplayFor(modelItem => item.UploadDT)
                 </td>
                 <td>
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-page="./Details" asp-route-id="@item.ID">详情</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">删除</a>
                 </td>
             </tr>
         }

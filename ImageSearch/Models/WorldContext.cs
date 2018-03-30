@@ -15,9 +15,9 @@ namespace ImageSearchApp.Models
 
         }
 
-        public DbSet<City> City { get; set; }
-        public DbSet<Schedule> Schedule { get; set; }
+        public DbSet<ImageSearchApp.Models.Schedule> Schedule { get; set; }
         public DbSet<ImageSearchApp.Models.Car> Car { get; set; }
         public DbSet<ImageSearchApp.Models.Dish> Dish { get; set; }
+        public DbSet<ImageSearchApp.Models.Face> Face { get; set; }
     }
 }
