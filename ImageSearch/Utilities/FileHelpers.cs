@@ -1,4 +1,4 @@
-﻿using ImageSearch.Models;
+﻿using ImageSearchApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ImageSearch.Utilities
+namespace ImageSearchApp.Utilities
 {
     public class FileHelpers
     {

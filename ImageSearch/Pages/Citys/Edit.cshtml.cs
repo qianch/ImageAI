@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ImageSearch.Models;
+using ImageSearchApp.Models;
 
-namespace ImageSearch.Pages.Citys
+namespace ImageSearchApp.Pages.Citys
 {
     public class EditModel : PageModel
     {

@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearch.Models;
+using ImageSearchApp.Models;
 
-namespace ImageSearch.Pages.Cars
+namespace ImageSearchApp.Pages.Dishs
 {
-    public class DetailModel : PageModel
+    public class DetailsModel : PageModel
     {
-        private readonly WorldContext _context;
+        private readonly ImageSearchApp.Models.WorldContext _context;
 
-        public DetailModel(WorldContext context)
+        public DetailsModel(ImageSearchApp.Models.WorldContext context)
         {
             _context = context;
         }
 
-        public Car Car { get; set; }
+        public Dish Dish { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,9 +27,9 @@ namespace ImageSearch.Pages.Cars
                 return NotFound();
             }
 
-            Car = await _context.Car.SingleOrDefaultAsync(m => m.ID == id);
+            Dish = await _context.Dish.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (Car == null)
+            if (Dish == null)
             {
                 return NotFound();
             }

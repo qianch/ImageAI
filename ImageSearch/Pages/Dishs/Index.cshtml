@@ -1,5 +1,5 @@
 ﻿@page
-@model ImageSearchApp.Pages.Cars.IndexModel
+@model ImageSearchApp.Pages.Dishs.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -31,22 +31,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].Title)
+                @Html.DisplayNameFor(model => model.Dish[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].ImgSize)
+                @Html.DisplayNameFor(model => model.Dish[0].ImgSize)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].ImgContent)
+                @Html.DisplayNameFor(model => model.Dish[0].ImgContent)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].UploadDT)
+                @Html.DisplayNameFor(model => model.Dish[0].UploadDT)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Car)
+        @foreach (var item in Model.Dish)
         {
             <tr>
                 <td>
@@ -62,16 +62,13 @@
                     @Html.DisplayFor(modelItem => item.UploadDT)
                 </td>
                 <td>
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                     <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
-                <td>
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

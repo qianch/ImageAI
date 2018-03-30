@@ -6,19 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ImageSearchApp.Models;
-using System.Text;
-using System.IO;
-using Newtonsoft.Json;
-using ImageSearchApp.BaiduClient;
 using ImageSearchApp.Utilities;
+using System.IO;
+using ImageSearchApp.BaiduClient;
 
-namespace ImageSearchApp.Pages.Cars
+namespace ImageSearchApp.Pages.Dishs
 {
     public class IndexModel : PageModel
     {
-        private readonly WorldContext _context;
+        private readonly ImageSearchApp.Models.WorldContext _context;
 
-        public IndexModel(WorldContext context)
+        public IndexModel(ImageSearchApp.Models.WorldContext context)
         {
             _context = context;
         }
@@ -26,18 +24,18 @@ namespace ImageSearchApp.Pages.Cars
         [BindProperty]
         public ImageUpload ImageUpload { get; set; }
 
-        public IList<Car> Car { get; set; }
+        public IList<Dish> Dish { get; set; }
 
         public async Task OnGetAsync()
         {
-            Car = await _context.Car.ToListAsync();
+            Dish = await _context.Dish.ToListAsync();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
-                Car = await _context.Car.AsNoTracking().ToListAsync();
+                Dish = await _context.Dish.AsNoTracking().ToListAsync();
                 return Page();
             }
 
@@ -45,18 +43,18 @@ namespace ImageSearchApp.Pages.Cars
 
             if (!ModelState.IsValid)
             {
-                Car = await _context.Car.AsNoTracking().ToListAsync();
+                Dish = await _context.Dish.AsNoTracking().ToListAsync();
                 return Page();
             }
 
             var ImageClassify = new ImageClassifyClient().imageClassify;
             var options = new Dictionary<string, object> { };
-            var result = ImageClassify.CarDetect(Convert.FromBase64String(ImgContent), options);
+            var result = ImageClassify.DishDetect(Convert.FromBase64String(ImgContent), options);
             var title = string.IsNullOrEmpty(ImageUpload.Title) ?
                 Path.GetFileNameWithoutExtension(ImageUpload.UploadImg.FileName) :
                 ImageUpload.Title;
 
-            var car = new Car
+            var dish = new Dish
             {
                 Title = title,
                 ImgSize = ImageUpload.UploadImg.Length,
@@ -66,7 +64,7 @@ namespace ImageSearchApp.Pages.Cars
                 UploadDT = DateTime.UtcNow
             };
 
-            _context.Car.Add(car);
+            _context.Dish.Add(dish);
             await _context.SaveChangesAsync();
             return RedirectToPage("./Index");
         }

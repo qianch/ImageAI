@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearch.Models;
+using ImageSearchApp.Models;
 
-namespace ImageSearch.Pages.Citys
+namespace ImageSearchApp.Pages.Citys
 {
     public class IndexModel : PageModel
     {

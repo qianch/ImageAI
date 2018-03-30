@@ -1,0 +1,68 @@
+﻿@page
+@model ImageSearchApp.Pages.Dishs.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Dish</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dish.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dish.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dish.ImgSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dish.ImgSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dish.ImgContent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dish.ImgContent)
+        </dd>
+        <dd>
+            <img alt="@Html.DisplayFor(model => model.Dish.Title)" src="data:@Html.DisplayFor(model => model.Dish.ImgType);base64,@Html.DisplayFor(model => model.Dish.ImgContent)" style="max-width:800px;" />
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Dish.ImgType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dish.Data)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dish.Data)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dish.UploadDT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dish.UploadDT)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Dish.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        var textarea = $(".textarea");
+        textarea.each(function () {
+            var current = $(this);
+            current.height(current.scroll().context.scrollHeight);
+        });
+    </script>
+}

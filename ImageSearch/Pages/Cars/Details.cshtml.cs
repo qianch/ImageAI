@@ -9,16 +9,15 @@ using ImageSearchApp.Models;
 
 namespace ImageSearchApp.Pages.Cars
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly WorldContext _context;
 
-        public DeleteModel(WorldContext context)
+        public DetailsModel(WorldContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
         public Car Car { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -35,24 +34,6 @@ namespace ImageSearchApp.Pages.Cars
                 return NotFound();
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Car = await _context.Car.FindAsync(id);
-
-            if (Car != null)
-            {
-                _context.Car.Remove(Car);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }

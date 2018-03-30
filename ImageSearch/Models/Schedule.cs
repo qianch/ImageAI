@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ImageSearch.Models
+namespace ImageSearchApp.Models
 {
     public class Schedule
     {

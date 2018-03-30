@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ImageSearchApp.Models;
 
-namespace ImageSearchApp.Pages.Citys
+namespace ImageSearchApp.Pages.Dishs
 {
     public class DeleteModel : PageModel
     {
-        private readonly WorldContext _context;
+        private readonly ImageSearchApp.Models.WorldContext _context;
 
-        public DeleteModel(WorldContext context)
+        public DeleteModel(ImageSearchApp.Models.WorldContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public City City { get; set; }
+        public Dish Dish { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace ImageSearchApp.Pages.Citys
                 return NotFound();
             }
 
-            City = await _context.City.SingleOrDefaultAsync(m => m.ID == id);
+            Dish = await _context.Dish.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (City == null)
+            if (Dish == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace ImageSearchApp.Pages.Citys
                 return NotFound();
             }
 
-            City = await _context.City.FindAsync(id);
+            Dish = await _context.Dish.FindAsync(id);
 
-            if (City != null)
+            if (Dish != null)
             {
-                _context.City.Remove(City);
+                _context.Dish.Remove(Dish);
                 await _context.SaveChangesAsync();
             }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImageSearchApp.Models
 {
-    public class Car
+    public class Dish
     {
         public int ID { get; set; }
         public string Title { get; set; }
