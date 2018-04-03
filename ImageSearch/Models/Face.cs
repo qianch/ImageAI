@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ImageSearchApp.Models
+namespace ImageSearch.Web.Models
 {
     public class Face
     {

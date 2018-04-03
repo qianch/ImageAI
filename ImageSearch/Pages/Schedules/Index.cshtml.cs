@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ImageSearchApp.Models;
-using ImageSearchApp.Utilities;
+using ImageSearch.Web.Models;
+using ImageSearch.Web.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace ImageSearch.Pages.Schedules
+namespace ImageSearch.Web.Pages.Schedules
 {
 
     public class IndexModel : PageModel

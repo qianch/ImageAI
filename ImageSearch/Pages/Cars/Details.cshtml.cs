@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearchApp.Models;
+using ImageSearch.Web.Models;
 
-namespace ImageSearchApp.Pages.Cars
+namespace ImageSearch.Web.Pages.Cars
 {
     public class DetailsModel : PageModel
     {

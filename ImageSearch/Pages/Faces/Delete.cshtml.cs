@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearchApp.Models;
+using ImageSearch.Web.Models;
 
-namespace ImageSearchApp.Pages.Faces
+namespace ImageSearch.Web.Pages.Faces
 {
     public class DeleteModel : PageModel
     {
-        private readonly ImageSearchApp.Models.WorldContext _context;
+        private readonly ImageSearch.Web.Models.WorldContext _context;
 
-        public DeleteModel(ImageSearchApp.Models.WorldContext context)
+        public DeleteModel(ImageSearch.Web.Models.WorldContext context)
         {
             _context = context;
         }

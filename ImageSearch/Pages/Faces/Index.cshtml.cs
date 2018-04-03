@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearchApp.Models;
+using ImageSearch.Web.Models;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
-using ImageSearchApp.Utilities;
+using ImageSearch.Web.Utilities;
 using System.IO;
-using ImageSearchApp.BaiduClient;
+using ImageSearch.Web.BaiduClient;
 
-namespace ImageSearchApp.Pages.Faces
+namespace ImageSearch.Web.Pages.Faces
 {
     public class IndexModel : PageModel
     {
-        private readonly ImageSearchApp.Models.WorldContext _context;
+        private readonly ImageSearch.Web.Models.WorldContext _context;
 
-        public IndexModel(ImageSearchApp.Models.WorldContext context)
+        public IndexModel(ImageSearch.Web.Models.WorldContext context)
         {
             _context = context;
         }

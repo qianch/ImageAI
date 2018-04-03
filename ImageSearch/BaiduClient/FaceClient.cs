@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Baidu.Aip.Face;
 
-namespace ImageSearchApp.BaiduClient
+namespace ImageSearch.Web.BaiduClient
 {
     public class FaceClient
     {

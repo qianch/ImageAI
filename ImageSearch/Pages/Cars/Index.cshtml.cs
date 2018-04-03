@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearchApp.Models;
+using ImageSearch.Web.Models;
 using System.Text;
 using System.IO;
 using Newtonsoft.Json;
-using ImageSearchApp.BaiduClient;
-using ImageSearchApp.Utilities;
+using ImageSearch.Web.BaiduClient;
+using ImageSearch.Web.Utilities;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
-namespace ImageSearchApp.Pages.Cars
+namespace ImageSearch.Web.Pages.Cars
 {
     public class IndexModel : PageModel
     {

@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ImageSearchApp.Models;
+using ImageSearch.Web.Models;
 
-namespace ImageSearchApp.Pages.Dishs
+namespace ImageSearch.Web.Pages.Dishs
 {
     public class DetailsModel : PageModel
     {
-        private readonly ImageSearchApp.Models.WorldContext _context;
+        private readonly ImageSearch.Web.Models.WorldContext _context;
 
-        public DetailsModel(ImageSearchApp.Models.WorldContext context)
+        public DetailsModel(ImageSearch.Web.Models.WorldContext context)
         {
             _context = context;
         }
