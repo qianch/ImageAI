@@ -12,12 +12,12 @@
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label asp-for="IdentitySingle.Name" class="control-label"></label>
-                <input asp-for="IdentitySingle.Name" type="text" class="form-control" />
+                <input asp-for="IdentitySingle.Name" type="text" class="form-control" value="徐旻"/>
                 <span asp-validation-for="IdentitySingle.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdentitySingle.CardNO" class="control-label"></label>
-                <input asp-for="IdentitySingle.CardNO" type="text" class="form-control" />
+                <input asp-for="IdentitySingle.CardNO" type="text" class="form-control" value="310104198008072018" />
                 <span asp-validation-for="IdentitySingle.CardNO" class="text-danger"></span>
             </div>
             <input type="submit" value="查询" class="btn btn-default" />

@@ -24,7 +24,7 @@ namespace ImageSearch.Web.Framework.Identity
             };
         }
 
-        public string getReponse(Dictionary<string, string> querys)
+        public string GetReponse(Dictionary<string, string> querys)
         {
             var searchReq = DefaultRequest(SBKRS);
             foreach (var query in querys)

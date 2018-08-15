@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ImageSearch.Web.Models;
 using ImageSearch.Web.Framework.Identity;
+using System.Text;
+using System.Text.Encodings.Web;
 
 namespace ImageSearch.Web.Pages.Identitys
 {
@@ -39,23 +41,28 @@ namespace ImageSearch.Web.Pages.Identitys
                 return Page();
             }
 
+            //var bytes = Encoding.GetEncoding("GBK").GetBytes(IdentitySingle.Name);
+            //var urlEncoder = UrlEncoder.Default;
             var querys = new Dictionary<string, string>
             {
-                { "name", "徐旻" },
-                { "registerCode", "310104198008072018" }
+                //{ "name", Encoding.UTF8.GetString(bytes)},
+                {"name","%D0%EC%95F"},
+                {"registerCode",IdentitySingle.CardNO }
             };
 
-            var result = _identitySearch.getReponse(querys);
-            var identity = new Identity
-            {
-                CardNO = IdentitySingle.CardNO,
-                Name = IdentitySingle.Name,
-                Result = result
-            };
+            //var result = _identitySearch.GetReponse(querys);
+            //var identity = new Identity
+            //{
+            //    CardNO = IdentitySingle.CardNO,
+            //    Name = IdentitySingle.Name,
+            //    Result = result
+            //};
 
-            _context.Identity.Add(identity);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("./Index");
+            //_context.Identity.Add(identity);
+            //await _context.SaveChangesAsync();
+            TempData.Add("name", querys["name"]);
+            TempData.Add("registerCode", querys["registerCode"]);
+            return RedirectToPage("./Detail");
         }
     }
 }

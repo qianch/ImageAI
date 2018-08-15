@@ -53,7 +53,7 @@ namespace ImageSearch.Web.Pages.Faces
             var groudId = "ZZX";
             var options = new Dictionary<string, object> { };
             var face = new FaceClient().Face;
-            var result = face.Identify(groudId, Convert.FromBase64String(ImgContent), options);
+            var result = face.Search(ImgContent, "BASE64", groudId, options);
             var title = Path.GetFileNameWithoutExtension(ImageUpload.FileName);
 
             var car = new Face

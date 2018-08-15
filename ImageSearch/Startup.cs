@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using ImageSearch.Web.Models;
 using Microsoft.AspNetCore.Builder;
@@ -43,6 +44,8 @@ namespace ImageSearch.Web
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
     }
 }
