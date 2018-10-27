@@ -8,9 +8,9 @@ namespace ImageSearch.Web.BaiduClient
 {
     public class ImageClassifyClient
     {
-        private const string _appID = "11007064";
-        private const string _apiKey = "CysimXMgKBFLcexUqGwGNK6t";
-        private const string _secretKey = "9wsK72IM764T2CS6i4VUoPgrNZtbQWFa";
+        private const string _appID = "";
+        private const string _apiKey = "";
+        private const string _secretKey = "";
         public ImageClassify ImageClassify { get; set; }
         public ImageClassifyClient()
         {

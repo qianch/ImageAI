@@ -8,9 +8,9 @@ namespace ImageSearch.Web.BaiduClient
 {
     public class ImageSearchClient
     {
-        private const string _appID = "11021488";
-        private const string _apiKey = "ZQCZGBbfx603o8HMqbGjesaY";
-        private const string _secretKey = "sbaGE6eTq1Q0knt2IxIrzr0FICzRnjcM";
+        private const string _appID = "";
+        private const string _apiKey = "";
+        private const string _secretKey = "";
         public Baidu.Aip.ImageSearch.ImageSearch ImageSearch { get; set; }
         public ImageSearchClient()
         {
