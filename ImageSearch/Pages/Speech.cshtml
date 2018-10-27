@@ -1,0 +1,18 @@
+﻿@page
+@model ImageSearch.Web.Pages.SpeechModel
+@{
+    ViewData["Title"] = "Speech";
+}
+
+<h2>Speech</h2>
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Text" class="control-label">输入文字</label>
+            <input asp-for="Text" type="text" class="form-control" />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <input type="submit" value="提交" class="btn btn-default" />
+    </form>
+</div>
+
