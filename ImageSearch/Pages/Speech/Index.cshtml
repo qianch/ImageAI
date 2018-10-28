@@ -1,0 +1,26 @@
+﻿@page
+@model ImageSearch.Web.Pages.Speech.IndexModel
+@{
+    ViewData["Title"] = "Speech";
+}
+
+<h2>Speech</h2>
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Speech.Text" class="control-label">输入需要合成的文本</label>
+            <input asp-for="Speech.Text" type="text" class="form-control" />
+            <span asp-validation-for="Speech.Text" class="text-danger"></span>
+
+            <label asp-for="Speech.Speed" class="control-label">输入语速</label>
+            <input asp-for="Speech.Speed" type="number" class="form-control" />
+            <span asp-validation-for="Speech.Speed" class="text-danger"></span>
+
+            <label asp-for="Speech.Volume" class="control-label">输入音量</label>
+            <input asp-for="Speech.Volume" type="number" class="form-control" />
+            <span asp-validation-for="Speech.Speed" class="text-danger"></span>
+        </div>
+        <input type="submit" value="合成语音" class="btn btn-default" />
+    </form>
+</div>
+

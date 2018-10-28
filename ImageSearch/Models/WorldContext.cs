@@ -19,6 +19,5 @@ namespace ImageSearch.Web.Models
         public DbSet<ImageSearch.Web.Models.Car> Car { get; set; }
         public DbSet<ImageSearch.Web.Models.Dish> Dish { get; set; }
         public DbSet<ImageSearch.Web.Models.Face> Face { get; set; }
-        public DbSet<ImageSearch.Web.Models.Identity> Identity { get; set; }
     }
 }
