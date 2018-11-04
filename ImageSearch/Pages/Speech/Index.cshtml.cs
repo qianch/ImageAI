@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 
 namespace ImageSearch.Web.Pages.Speech
 {
@@ -16,7 +17,7 @@ namespace ImageSearch.Web.Pages.Speech
         {
             Speech = new Models.Speech
             {
-                Speed = 3,
+                Speed = 5,
                 Volume = 7
             };
         }
@@ -36,9 +37,16 @@ namespace ImageSearch.Web.Pages.Speech
             };
 
             var result = speechClient.SpeechSynthesis.Synthesis(Speech.Text, option);
+            var fileName = $"Media/{Speech.Text}.mp3";
+            var dir = Path.GetDirectoryName(fileName);
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
             if (result.ErrorCode == 0)  // 或 result.Success
             {
-                System.IO.File.WriteAllBytes($"{Speech.Text}.mp3", result.Data);
+                return File(result.Data, "audio/mp3", $"{Speech.Text}.mp3");
+
             }
             return Page();
         }
