@@ -8,9 +8,9 @@ namespace ImageSearch.Web.BaiduClient
 {
     public class FaceClient
     {
-        private const string _appID = "";
-        private const string _apiKey = "";
-        private const string _secretKey = "";
+        private const string _appID = "11022177";
+        private const string _apiKey = "noWmGRpSMf7FoQhcioEFxo3v";
+        private const string _secretKey = "rtaMcXPOmgoEDv2iSqoBkIzQ8Qh2FCo9";
         public Face Face { get; set; }
         public FaceClient()
         {

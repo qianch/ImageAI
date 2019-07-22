@@ -12,7 +12,7 @@ namespace ImageSearch.Web.Models
 
         [Display(Name = "文本")]
         [Required(ErrorMessage = "文本必填")]
-        [StringLength(60, MinimumLength = 3)]
+        [StringLength(100, MinimumLength = 3)]
         public string Text { get; set; }
 
         [Display(Name = "语速")]

@@ -2,9 +2,9 @@
 {
     public class SpeechClient
     {
-        private const string _appID = "";
-        private const string _appKey = "";
-        private const string _secretKey = "";
+        private const string _appID = "14588026";
+        private const string _appKey = "WHAHTdOdMdLoyM2FVWG0ppbj";
+        private const string _secretKey = "2TxizQaauRLKHiUqGKSeikb8eqMUMDYp";
 
         public Baidu.Aip.Speech.Tts SpeechSynthesis { get; set; }
 
