@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageAI", "ImageAI\ImageAI.csproj", "{BF839965-1419-4692-81F1-E63B2AE7CCB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageAI.Core", "ImageAI.Core\ImageAI.Core.csproj", "{7EE5F72C-FB70-457B-B559-B2CA3608160D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF839965-1419-4692-81F1-E63B2AE7CCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF839965-1419-4692-81F1-E63B2AE7CCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF839965-1419-4692-81F1-E63B2AE7CCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF839965-1419-4692-81F1-E63B2AE7CCB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE5F72C-FB70-457B-B559-B2CA3608160D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE5F72C-FB70-457B-B559-B2CA3608160D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE5F72C-FB70-457B-B559-B2CA3608160D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE5F72C-FB70-457B-B559-B2CA3608160D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A9C36B8-86A3-4E70-AD33-2907C38DA679}
+	EndGlobalSection
+EndGlobal
