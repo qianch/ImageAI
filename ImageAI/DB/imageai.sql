@@ -3,7 +3,6 @@ Navicat MySQL Data Transfer
 
 Source Server         : 百度云
 Source Server Version : 50644
-Source Host           : 106.12.85.7:3306
 Source Database       : imageai
 
 Target Server Type    : MYSQL
