@@ -50,7 +50,6 @@ namespace ImageAI
                 endpoints.MapRazorPages();
             });
 
-            app.UseStaticFiles();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
     }
