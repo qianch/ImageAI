@@ -20,7 +20,7 @@ namespace ImageAI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ImageAIContext>(options => options.UseMySQL("Server=106.12.85.7;Port=3306;DataBase=ImageAI;uid=root;pwd=123@epoint;"));
+            services.AddDbContext<ImageAIContext>(options => options.UseMySQL("Server=localhost;Port=3306;DataBase=ImageAI;uid=blue;pwd=2k21blue;"));
             services.AddMvc();
         }
 
